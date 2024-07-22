@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calulator</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .mdiv{
+            height: 100vh;
+            width: 100vw;
+            /* background-color: grey; */
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       
+        input{
+            color: white;
+            background-color: transparent;
+            height: 65px;
+            width: 65px;
+            margin: 6px;
+            border-radius: 50%;
+            background-color: grey;
+            outline: none;
+            border: none;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        #output{
+            height: 50px;
+            width: 90%;
+            margin-top: 30px;
+            border: none !important;
+            font-size: 30px;
+            text-align: right;
+            outline: none;
+        }
+
+        .calculator{
+            height: 530px;
+            width: 360px;
+            background-color: black;
+            color: white;
+            border-radius: 20px !important;
+            padding: 20px;
+
+        }
+        #zero{
+            width: 144px;
+            border-radius: 30px;
+        }
+        .lstbtn{
+            background-color: orange;
+        }
+        #output{
+            border-radius: 20px;
+            height: 60px;
+            margin: 15px 20px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="mdiv">
+        <div class="calculator" align="center">
+            <form >
+                <div> <input id="output" type="text" name="op">
+                </div>
+                <div>
+                    <input type="button" name="AC" value="AC">
+                    <input type="button" name="c" value="C">
+                    <input type="button" name="operator" value="%">
+                    <input type="button" name="operator" value="/" class="lstbtn">
+                </div>
+                <div>
+                    <input type="button" name="num" value="7">
+                    <input type="button" name="num" value="8">
+                    <input type="button" name="num" value="9">
+                    <input type="button" name="operator" value="X" class="lstbtn">
+                </div>
+                <div>
+                    <input type="button" name="num" value="4">
+                    <input type="button" name="num" value="5">
+                    <input type="button" name="num" value="6">
+                    <input type="button" name="operator" value="-" class="lstbtn">
+                </div>
+                <div>
+                    <input type="button" name="num" value="1">
+                    <input type="button" name="num" value="2">
+                    <input type="button" name="num" value="3">
+                    <input type="button" name="operator" value="+" class="lstbtn">
+                </div>
+                <div>
+                    <input id="zero" type="button" name="num" value="0">
+                    <input type="button" name="num" value=".">
+                    <input type="button" name="operator" value="=" class="lstbtn">
+                </div>
+            </form>
+           
+        </div>
+    </div>
+    
+</body>
+</html>
