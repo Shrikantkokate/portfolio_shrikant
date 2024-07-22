@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<title>Shrikant Portfolio</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-size: 20px;
+            font-family: sans-serif
+        }
+        #navigation_bar{
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            z-index: 10;
+            background-image: linear-gradient(to right,#96b4eb,#3d72d1);
+        }
+        .portfolio-section{
+            width: 100%;
+        }
+       
+        .nav-link{
+            color: black !important;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        #port-name, .fed{
+            font-size: 35px;
+            color: royalblue;
+            font-weight: bolder;
+            font-family: Arial Black;
+            font-variant: small-caps;
+            -webkit-text-stroke: 1px black;
+            text-shadow: 0px 0px 10px white;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        .home-section{
+            height: 400px;
+            position: relative;
+            top: 70px;
+            background-image: url("https://miro.medium.com/v2/resize:fit:1272/1*ZSVmWGcc1weENb0ShawWxw.gif");
+            background-repeat: no-repeat;
+            background-position: 94% 18%;
+            background-size: 40%;
+        }
+        .myinfo{
+            height: 350px;
+            width: 700px;
+            margin-top: 120px;
+            margin-left: 50PX;
+        
+        }
+        .info-data1{
+            font-weight: bolder;
+            font-size: 30px;
+        }
+        .fed{
+            font-size: 35px;
+            font-weight: bolder;
+            color: rgb(204, 121, 91);
+        }
+        #resume-button{
+            margin: 30px;
+            height: 50px;
+            width: 120px;
+            border: none;
+            outline: none;
+            background-color: royalblue;
+            border-radius: 8px;
+            transition-duration: 2s;
+        }
+        #resume-button a{
+            color: white;
+            text-decoration: none;
+            font-weight: bolder;
+         
+        }
+        #resume-button a:hover{
+            color: royalblue;
+        }
+        #resume-button:hover{
+            background-color: white;
+            color: royalblue;
+            border: 2px solid royalblue;
+            transform: scale(1.2);
+            box-shadow: 0px 0px 5px royalblue;
+        }
+
+        #about{
+            margin-top: 50px;
+            height: 370px;
+            width: 100%;
+        }
+        .parent-divabout{
+            height: 370px;
+            width: 100%;
+            display: flex;
+        }
+        .child1{
+            height: inherit;
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .child2{
+            height: inherit;
+            width: 60%;
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: bolder;
+            padding: 20px;
+            padding-right: 50px;
+            text-align: justify;
+        }
+
+        .child2 p{
+            word-spacing: 5px;
+            letter-spacing: 1px;
+            line-height: 30px;
+            text-indent: 20%;
+        }
+
+        .child2 h1{
+            font-size: 30px;
+            font-family: Arial Black;
+            margin-bottom: 23px;
+            color: royalblue;
+        }
+        .kenburns-top {
+	-webkit-animation: kenburns-top 7s ease-in 1s both;
+	        animation: kenburns-top 7s ease-in 1s both;
+    }
+
+
+@-webkit-keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+@keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+    .myimg-div{
+        height: 250px;
+        width: 370px;
+        overflow: hidden;
+    }
+    .tracking-in-expand {
+	-webkit-animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}   
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-7-20 13:58:43
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation tracking-in-expand
+ * ----------------------------------------
+ */
+ @-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#skills{
+    height: 350px;
+    width: 100%;
+    /* background-color: whie; */
+}
+
+.skills-section{
+    width: 100%;
+}   
+
+    #table-row td{
+        /* border: 2px solid red; */
+        margin: 20px !important;
+        padding: 20px;
+        transition-duration: 1s;
+    }
+    #table-row td:hover{
+        background-color: whitesmoke;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px grey;
+        transition-delay: 0.5s;
+    }
+
+    #table-row td h5{
+        font-weight: bolder;
+        color: orangered;
+    }
+    #project{
+        margin-top: 20px;
+        height: 630px;
+        /* background-color: grey; */
+    }
+    .myprojects-section{
+        width: 90%;
+        height: 400px;
+        /* background-color: grey; */
+        margin-left: 5%;
+    }
+    #contact{
+        height: 400px;
+        margin-bottom: 30px;
+        /* background-color: grey; */
+    }
+    #footer-port{
+        height: 50px;
+        width: 100%;
+        background-color: grey;
+     
+    }
+    #footer-port h4{
+        line-height: 50px;
+        font-weight: bolder;
+        font-variant: small-caps;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <section id="navigation_bar">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#"><span id="port-name">Shrikant</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#project">Projects</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                
+              </ul>
+            
+            </div>
+          </nav>
+    </section>
+    <section id="home" class="portfolio-section">
+        <div class="home-section">
+            <div class="myinfo">
+                <div class="info-data1">Hi my name is</div>
+                <div id="port-name" data-aos="slide-right">SHRIKANT KOKATE  </div>
+                <div class="info-data1"> I am a <span class="fed">Front End Developer</span></div>
+                
+                <DIV>
+                    <button id="resume-button"><a href="resume.pdf">RESUME</a></button>
+                </DIV>
+            </div>
+        </div>
+    </section>
+     <section id="about" class="portfolio-section">
+        <div class="parent-divabout">
+            <div class="child1">
+                <div class="myimg-div">
+                    <img class="kenburns-top" height="250px" src="https://t4.ftcdn.net/jpg/03/26/98/51/360_F_326985142_1aaKcEjMQW6ULp6oI9MYuv8lN9f8sFmj.jpg" alt="">
+
+                </div>
+
+            </div>
+            <div class="child2">
+                <h1 align="center" class="tracking-in-expand" >ABOUT </h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet explicabo perferendis dolor aut tenetur dicta hic, nesciunt animi, provident dolores consequuntur voluptas nisi praesentium facilis beatae quas architecto eligendi ea!
+                    Lorem ipsum dolor sit amet doloribus nulla, ipsum, numquam porro animi ss.
+                </p>
+            </div>
+    </div>
+    </section>
+    <section id="skills" class="portfolio-section">
+        <h1 align="center" class="tracking-in-expand" > Skills</h1>
+        <div class="skills-section" align="center">
+            <table class=" bordeskill-table" width="90%" height="250px" cellspacing="10px">
+                <tr id="table-row">
+                    <td width="50%" valign="top" align="center">
+                       <h5> language</h5>
+                       <p>
+                        C, C++, JAVA, python
+                       </p>
+                    </td>
+                    <td width="50%" valign="top" align="center" height="50%">
+                        <h5>Front End Tech</h5>
+                        <p>HTML, CSS , JS , Bootstrap, React JS</p>
+                    </td>
+                </tr>
+                <tr id="table-row">
+                    <td width="50%" valign="top" align="center">
+                        <h5>Tools</h5>
+                        <p>Vs code, Eclipse , ItelliJ, Github , SQL, Postman</p>
+                    </td>
+                    <td width="50%" valign="top" align="center">
+                        <h5>Operating System</h5>
+                        <p>Windows, Andriod, iOS, LINUX, Ubuntu, Solaris</p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </section>
+    <section id="project" class="portfolio-section">
+        <h1 align="center" class="tracking-in-expand" >Projects </h1>
+        <div class="myprojects-section">
+
+            <div class="card-deck">
+                <div class="card" data-aos="slide-right">
+                  <img src="port.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Portfolio</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted"><a href="https://github.com/Shrikantkokate/portfolio_shrikant" target="blank">CLICK HERE </a></small></p>
+                  </div>
+                </div>
+                <div class="card" data-aos="slide-down">
+                  <img src="https://img.freepik.com/premium-vector/vector-calculator-icon_901263-202.jpg"  width="120px" height="300px"  class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Calculator</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text"><small class="text-muted"><a href="https://github.com/Shrikantkokate/portfolio_shrikant" target="blank">CLICK HERE </a></small></small></p>
+                  </div>
+                </div>
+                <div class="card" data-aos="slide-left">
+                  <img style="height: 200px; width: 250px; margin-left: 27%;" src="https://cdn-icons-png.freepik.com/512/3767/3767036.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Weather App</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text"><small class="text-muted"><a href="https://github.com/Shrikantkokate/portfolio_shrikant" target="blank">CLICK HERE </a></small></small></p>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+    <section id="contact" class="portfolio-section">
+        <h1 align="center" class="tracking-in-expand" >Contact </h1>
+       <div align="center">
+        <table class="contact-tbl"  width="90%">
+            <tr height="300px" align="center" valign ="top">
+                <td width="50%">
+                    put your info HERE
+                    email/ phone , github, address, linkedin
+                </td>
+                <td>
+                    <div style="padding: 15px; height: 330px; width: 100%; background-color: whitesmoke;">
+                        <h4>Enquiry</h4>
+                        <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Phone Number</label>
+                                <input type="tel" class="form-control" id="inputPassword4">
+                              </div>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="inputAddress2">Comment</label>
+                              <input type="text" class="form-control" id="inputAddress2" placeholder="Add a comment here">
+                            </div>
+                           
+                            <div class="form-group">
+                              
+                            </div>
+                            <button type="submit" class="btn btn-primary">SUBMIT</button>
+                          </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+       </div>
+    </section> 
+    <section id="footer-port">
+       <h4 align ="center"> Made by Shrikant &#128512;</h4>
+    </section>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init(
+       {
+        duration: 3000,
+       }
+      );
+    </script>
+</body>
+</html>
